@@ -1,0 +1,5 @@
+.DS_Store
+/build
+/deploy-jpp.sh
+/index.html
+/node_modules

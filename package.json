@@ -1,0 +1,37 @@
+{
+  "name": "crypto",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "compile": "./node_modules/.bin/tsc -p tsconfig.json",
+    "compile-watch": "./node_modules/.bin/tsc -p tsconfig.json --watch",
+    "lint": "eslint . --ext .ts",
+    "lint-watch": "npm-watch lint",
+    "bundle": "./node_modules/.bin/esbuild --bundle --sourcemap --loader:.html=text  --loader:.css=text --loader:.svg=dataurl src/main.ts --outfile=build/bundle.js && tools/insert_md5_into_index.sh",
+    "bundle-watch": "npm-watch bundle",
+    "server": "./tools/local_server.py 8088"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.16.0",
+    "@typescript-eslint/parser": "^5.16.0",
+    "esbuild": "^0.14.27",
+    "eslint": "^8.11.0",
+    "npm-watch": "^0.11.0",
+    "ts-loader": "^9.2.8",
+    "typescript": "^4.6.2"
+  },
+  "watch": {
+    "bundle": {
+      "patterns": [
+        "src"
+      ],
+      "extensions": "ts,html,css,svg"
+    },
+    "lint": {
+      "patterns": [
+        "src"
+      ],
+      "extensions": "ts"
+    }
+  }
+}

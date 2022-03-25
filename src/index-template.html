@@ -1,0 +1,101 @@
+<html lang="fr">
+
+<head>
+	<!-- For header, check: https://www.matuzo.at/blog/html-boilerplate/ -->
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width">
+
+	<title>Cryptographie</title>
+
+	<script src="build/bundle.js?r=BUNDLE_MD5" type="module"></script>
+
+	<style>
+		body,
+		* {
+			font-family: Arial, Helvetica, sans-serif;
+			font-size: 16px;
+		}
+
+		.cipherzone {
+			width: 100%;
+			max-width: 600px;
+			margin: 20px auto 50px;
+			background-color: #fafafa;
+			padding: 20px;
+			border-radius: 20px;
+			box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+		}
+
+		.ciphername {
+			width: 100%;
+			font-size: 150%;
+			text-align: center;
+			font-weight: bold;
+		}
+
+		.label {
+			margin: 20px 0 10px;
+			font-size: 120%
+		}
+
+		.controls {
+			margin: 20px 0;
+		}
+
+		textarea {
+			width: 100%;
+			height: 10em;
+		}
+
+		button {
+			margin: 0 10px;
+		}
+
+		.wikilink {
+			font-weight: normal;
+		}
+	</style>
+
+</head>
+
+<body style="">
+	<div class="cipherzone caesar">
+		<div class="ciphername">Chiffrement de César
+			<span class="wikilink">(<a href="https://fr.wikipedia.org/wiki/Chiffrement_par_décalage" target="_blank">Wikipédia</a>)</span>
+		</div>
+		<div class="label">Message:</div>
+		<textarea class="plaintext"></textarea>
+
+		<div class="controls">
+			<span class="label">Clé secrète:</span>
+			<input type="number" min="0" max="100" class="key">
+			<button class="encrypt">⬇︎ Chiffer ⬇︎</button>
+			<button class="decrypt">⬆︎ Déchiffrer ⬆︎</button>
+		</div>
+
+
+		<div class="label">Message chiffré:</div>
+		<textarea class="ciphertext"></textarea><br>
+	</div>
+
+	<div class="cipherzone vigenere">
+		<div class="ciphername">Chiffrement de Vigenère
+			<span class="wikilink">(<a href="https://fr.wikipedia.org/wiki/Chiffre_de_Vigenère" target="_blank">Wikipédia</a>)</span>
+		</div>
+		<div class="label">Message:</div>
+		<textarea class="plaintext"></textarea>
+
+		<div class="controls">
+			<span class="label">Clé secrète:</span>
+			<input type="text" class="key">
+			<button class="encrypt">⬇︎ Chiffer ⬇︎</button>
+			<button class="decrypt">⬆︎ Déchiffrer ⬆︎</button>
+		</div>
+
+
+		<div class="label">Message chiffré:</div>
+		<textarea class="ciphertext"></textarea><br>
+	</div>
+</body>
+
+</html>
