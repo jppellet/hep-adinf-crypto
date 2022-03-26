@@ -10,7 +10,7 @@ type CipherReturns = {
 
 function caesar(text: string, key: string, decrypt: boolean = false): CipherReturns | undefined {
     if (key === "") {
-        alert("Veuillez indiquer une clé valable")
+        alert("Veuillez indiquer une clé valable. Celle-ci doit être un nombre entier.")
         return undefined
     }
     text = normalize(text)
@@ -38,7 +38,7 @@ function caesar(text: string, key: string, decrypt: boolean = false): CipherRetu
 function vigenere(text: string, key: string, decrypt: boolean = false): CipherReturns | undefined {
     key = key.toUpperCase().replace(/[^A-Z]/g, "")
     if (key === "") {
-        alert("Veuillez indiquer une clé valable")
+        alert("Veuillez indiquer une clé valable. Celle-ci doit être un mot ou une suite de lettres.")
         return undefined
     }
 text = normalize(text)
